@@ -9,19 +9,17 @@
 int _printf(const char *format, ...)
 {
 	va_list(list);
-	int bytes, i;
+	int bytes = 0, i = 0;
 	char buffer[8], *str;
 
 	va_start(list, format);
-	bytes = 0;
-	i = 0;
 	/* write(fd, buf, count) */
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1])
 		{
 			i++;
-			switch(format[i])
+			switch (format[i])
 			{
 				case '%':
 					buffer[0] = '%';
