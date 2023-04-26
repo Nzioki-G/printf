@@ -7,6 +7,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+char *hash_flag(char specifier, int arg);
 char *buffer_char(char specifier, char print_me);
 char *buffer_str(char specifier, char *str);
 char *buffer_number(char specifier, int num);

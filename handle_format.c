@@ -38,6 +38,9 @@ int handle_format(char *format, va_list args)
 			case 'X':
 				buffer = buffer_number(format[i], va_arg(args, int));
 				break;
+			case '#':
+				buffer = hash_flag(format[++i], va_arg(args, int));
+				break;
 			case 'p':
 				buffer = buffer_pointer(format[i], va_arg(args, void *));
 				break;
